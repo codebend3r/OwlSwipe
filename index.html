@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title><!-- @echo title --></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=1, user-scalable=no"/>
+
+	<!-- @if NODE_ENV == 'DEV' -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="css/owlgallery.css"/>
+	<!-- @endif -->
+	<!-- @if NODE_ENV == 'PROD' -->
+	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.css"/>
+	<!-- @endif -->
+	<!-- @if NODE_ENV == 'RELEASE' -->
+	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.min.css"/>
+	<!-- @endif -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' >
+
+</head>
+<body>
+
+<div class='title-bar-bg'>
+    <div class='title-bar'>
+        <h1><!-- @echo title --></h1>
+        <h2>v<!-- @echo pluginVersion --></h2>
+        <div class='github'>
+            <a href='https://github.com/crivas/<!-- @echo title -->' target='_blank'>
+                <img src='images/logos/github.png' width='32' height='32'/>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class='main-container'>
+
+    <div class='download'>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed) 33KB</a>
+    </div>
+
+    <div class='download'>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified) 10KB</a>
+    </div>
+
+    <div class='container'>
+
+	    <h4>Example #1</h4>
+	    <p></p>
+        <ul class='gallery-container-1' data-bind='foreach: imagesList'>
+            <li class='slides'>
+                <img class='image-slide' width='1000' height='563' data-bind='attr:{src:$data}'>
+            </li>
+        </ul>
+
+	    <h4>HTML</h4>
+	    <pre>
+		    <code>
+		    </code>
+	    </pre>
+
+	    <h4>JS</h4>
+	    <pre>
+		    <code>
+		    </code>
+	    </pre>
+
+    <hr>
+
+    <div class='documentation'>
+
+        <h3>Plugin Options</h3>
+
+        <ul class='small-doc' data-bind='foreach: optionsList'>
+            <li>
+                <p><span class='key' data-bind='html: key'></span> -- default value: <span class='default-value' data-bind='html: defaultValue'></span> -- type: <span class='type' data-bind='html: type'></span></p>
+                <p class='description' data-bind='html: description'></p>
+            </li>
+            <hr>
+        </ul>
+
+        <h3>Events</h3>
+
+        <ul class='small-doc' data-bind='foreach: eventsList'>
+            <li>
+                <p><span class='key' data-bind='html: eventName'></span> -- type: <span class='type' data-bind='html: target'></span></p>
+                <p class='description' data-bind='html: description'></p>
+            </li>
+            <hr>
+        </ul>
+
+    </div>
+
+    <p class='legal'>© 2013 Crivas Inc. All rights reserved.</p>
+
+</div>
+
+<!-- @if NODE_ENV == 'DEV' -->
+<script src="js/plugins/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="js/plugins/jquery.owlgallery-1.5.2.js" type="text/javascript"></script>
+<script src="js/plugins/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js" type="text/javascript"></script>
+<script src="js/vendor/knockout-2.2.1.js" type="text/javascript"></script>
+<script src="js/vendor/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.Gallery.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.Documentation.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.ImageData.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
+<script src="js/internal/Crivas.Init.js" type="text/javascript"></script>
+<!-- @endif -->
+<!-- @if NODE_ENV == 'PROD' -->
+<script src="js/<!-- @echo name -->-<!-- @echo version -->.js" type="text/javascript"></script>
+<!-- @endif -->
+<!-- @if NODE_ENV == 'RELEASE' -->
+<script src="js/<!-- @echo name -->-<!-- @echo version -->.min.js" type="text/javascript"></script>
+<!-- @endif -->
+
+
+</body>
+</html>
