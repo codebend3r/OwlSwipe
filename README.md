@@ -1,4 +1,5 @@
-OwlSwipe v0.1
+OwlSwipe
 ========
+v0.1
 
-Touch event detection
+JQuery Plugin - touch event detection
