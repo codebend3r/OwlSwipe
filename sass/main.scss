@@ -26,7 +26,7 @@ h1 {
 h2 {
   font-size: 18px;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 15px;
   display: inline;
   color: $tertiaryColour;
   @media #{$retinaBreakpoint} {
@@ -157,39 +157,6 @@ li {
   }
 }
 
-.documentation {
-
-  position: static;
-
-  dl {
-
-    font-size: 14px;
-    margin: 0 0 20px 0;
-
-    .key-name {
-      font-weight: bold;
-      color: $primaryColour;
-      font-size: 16px;
-    }
-
-    .var-type {
-      font-style: italic;
-      color: darkslategrey;
-    }
-
-    dt {
-      display: inline;
-      color: $primaryColour;
-    }
-
-    dd {
-      display: inline;
-      margin: 0;
-    }
-
-  }
-}
-
 ul.modes {
   color: $primaryColour;
 }
@@ -243,30 +210,34 @@ ul.slides {
   li {
     list-style: none;
     color: #7f7f7f;
+    margin: 20px 0;
     @media #{$retinaBreakpoint} {
-      font-size: $retinaFontSize;
+      font-size: #{$retinaFontSize - 2};
     }
     .key {
       font-weight: bold;
       font-size: 14px;
       color: $secondaryColour;
       @media #{$retinaBreakpoint} {
-        font-size: $retinaFontSize;
+        font-size: #{$retinaFontSize - 2};
       }
+    }
+    .val {
+      color: #2c2c2c;
     }
     .description {
       font-weight: normal;
       font-size: 12px;
       @media #{$retinaBreakpoint} {
-        font-size: $retinaFontSize;
+        font-size: #{$retinaFontSize - 2};
       }
     }
     .default-value, .type {
-      color: #2c2c2c;
+      font-weight: bold;
+      color: $tertiaryColour;
       @media #{$retinaBreakpoint} {
-        font-size: #{$retinaFontSize - 1};
+        font-size: #{$retinaFontSize - 2};
       }
     }
-    margin: 0 0 30px 0;
   }
 }

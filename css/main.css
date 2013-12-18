@@ -26,7 +26,7 @@ h1 {
 h2 {
   font-size: 18px;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 15px;
   display: inline;
   color: #ff413c;
 }
@@ -175,31 +175,6 @@ li {
   opacity: 1;
 }
 
-.documentation {
-  position: static;
-}
-.documentation dl {
-  font-size: 14px;
-  margin: 0 0 20px 0;
-}
-.documentation dl .key-name {
-  font-weight: bold;
-  color: #c7cac6;
-  font-size: 16px;
-}
-.documentation dl .var-type {
-  font-style: italic;
-  color: darkslategrey;
-}
-.documentation dl dt {
-  display: inline;
-  color: #c7cac6;
-}
-.documentation dl dd {
-  display: inline;
-  margin: 0;
-}
-
 ul.modes {
   color: #c7cac6;
 }
@@ -249,11 +224,11 @@ ul.slides li {
 .small-doc li {
   list-style: none;
   color: #7f7f7f;
-  margin: 0 0 30px 0;
+  margin: 20px 0;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .small-doc li .key {
@@ -263,8 +238,11 @@ ul.slides li {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .key {
-    font-size: 32px;
+    font-size: 30px;
   }
+}
+.small-doc li .val {
+  color: #2c2c2c;
 }
 .small-doc li .description {
   font-weight: normal;
@@ -272,14 +250,15 @@ ul.slides li {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .description {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .small-doc li .default-value, .small-doc li .type {
-  color: #2c2c2c;
+  font-weight: bold;
+  color: #ff413c;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .default-value, .small-doc li .type {
-    font-size: 31px;
+    font-size: 30px;
   }
 }

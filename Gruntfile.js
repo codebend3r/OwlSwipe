@@ -74,7 +74,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/main.css': 'sass/main.scss',
-                    'css/owlgallery.css': 'sass/owlgallery.scss'
+                    'css/owlswipe.css': 'sass/owlswipe.scss'
                 }
             }
         },
@@ -87,7 +87,6 @@ module.exports = function(grunt) {
 		    jsconcat: {
 			    src: [
 				    'js/plugins/jquery-1.9.1.js',
-                    'js/plugins/jquery.owlgallery-1.5.2.js',
                     'js/plugins/<%= pkg.pluginName %>-<%= pkg.pluginVersion %>.js',
 				    'js/vendor/knockout-2.2.1.js',
 				    'js/vendor/TweenMax.min.js',
@@ -110,7 +109,7 @@ module.exports = function(grunt) {
 			    src: [
 				    'css/reset.css',
 				    'css/main.css',
-				    'css/owlgallery.css'
+				    'css/owlswipe.css'
 			    ],
 			    dest: 'css/compiled/<%= pkg.outputName %>-<%= pkg.version %>.css'
 		    }
@@ -186,7 +185,6 @@ module.exports = function(grunt) {
 		    }
 	    },
 	    preprocess: {
-
             options: {
                 context: {
                     title: '<%= pkg.name %>',
@@ -208,7 +206,6 @@ module.exports = function(grunt) {
 			    src: 'index.html',
 			    dest: '<%= pkg.outputFolder %>/index.html'
 		    }
-
 	    },
         'ftp-deploy': {
             build: {
