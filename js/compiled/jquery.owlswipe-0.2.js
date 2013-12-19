@@ -1,6 +1,7 @@
 var Owl = Owl || {};
 
 Owl.swipeEvents = {};
+Owl.swipeEvents.SWIPE = 'swipe';
 Owl.swipeEvents.SWIPE_LEFT = 'swipe_left';
 Owl.swipeEvents.SWIPE_RIGHT = 'swipe_right';
 Owl.swipeEvents.SWIPE_UP = 'swipe_up';
@@ -16,6 +17,7 @@ $.fn.owlmobileswipe = function (options) {
 
     var settings = $.extend({
         // These are the defaults.
+        swipe: function(){},
         swipeLeft: function(){},
         swipeRight: function(){},
         swipeUp: function(){},
@@ -30,7 +32,7 @@ $.fn.owlmobileswipe = function (options) {
         bufferY: 50,
         minMovementX: 75,
         minMovementY: 75,
-        swipeTimeout: 1500
+        swipeTimeout: 3000
     }, options);
 
     var $this = this,
@@ -47,9 +49,10 @@ $.fn.owlmobileswipe = function (options) {
 
 	self.initDetection = function () {
 
-        console.log('initDetection');
+		$this.on(Owl.swipeEvents.SWIPE, function(e, d){
+			settings.swipe.call(settings, d);
+		});
 
-        // bind passed in event to callback
         $this.on(Owl.swipeEvents.SWIPE_LEFT, function(e, d){
 	        settings.swipeLeft.call(settings, d);
         });
@@ -151,6 +154,8 @@ $.fn.owlmobileswipe = function (options) {
 		//console.log('onTouchEnd');
 		$this.off('touchmove touchend');
 		if (dispatchSwipeEvent) {
+
+			$this.trigger(Owl.swipeEvents.SWIPE, [distance]);
 
 			if (distanceAbs.y < settings.bufferY && distanceAbs.x > settings.minMovementX) {
 
