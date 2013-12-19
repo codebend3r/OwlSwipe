@@ -38,11 +38,11 @@
 <div class='main-container'>
 
     <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed) 33KB</a>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed) 6KB</a>
     </div>
 
     <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified) 10KB</a>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified) 4KB</a>
     </div>
 
     <div class='container'>
@@ -50,7 +50,8 @@
 	    <h4>Example #1</h4>
 	    <p></p>
 
-        <div class='swipe-area'></div>
+        <div class='swipe-area'>
+        </div>
 
         <p class='output-container'>
             <span>OUTPUT</span>: <span class='output'></span>
@@ -58,14 +59,16 @@
 
 	    <h4>HTML</h4>
 	    <pre>
-		    <code>
-		    </code>
+&ltdiv class='swipe-area'&gt&lt/div&gt
 	    </pre>
 
 	    <h4>JS</h4>
 	    <pre>
-		    <code>
-		    </code>
+$('.swipe-area').owlmobileswipe({
+	swipeLeft: function(distance) {
+		console.log('SWIPED LEFT', distance);
+	}
+});
 	    </pre>
 
     <hr>

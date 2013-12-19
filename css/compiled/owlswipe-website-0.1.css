@@ -83,7 +83,7 @@ input, select {
 /* 'use strict' */
 
 html {
-  font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12px;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
@@ -110,7 +110,7 @@ h1 {
 h2 {
   font-size: 18px;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 15px;
   display: inline;
   color: #ff413c;
 }
@@ -158,6 +158,7 @@ p.legal, a.legal {
 }
 
 pre {
+  font-family: Consolas, monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
   color: #515450;
@@ -166,24 +167,12 @@ pre {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   pre {
-    font-size: 30px;
-  }
-}
-
-code {
-  margin: 0;
-  padding: 0;
-  white-space: pre-wrap;
-  padding: 10px;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  code {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
 var {
-  font-family: monospace;
+  font-family: Consolas, monospace;
   font-style: normal;
   font-weight: normal;
   color: #515450;
@@ -191,7 +180,7 @@ var {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   var {
-    font-size: 30px;
+    font-size: 28px;
   }
 }
 
@@ -259,31 +248,6 @@ li {
   opacity: 1;
 }
 
-.documentation {
-  position: static;
-}
-.documentation dl {
-  font-size: 14px;
-  margin: 0 0 20px 0;
-}
-.documentation dl .key-name {
-  font-weight: bold;
-  color: #c7cac6;
-  font-size: 16px;
-}
-.documentation dl .var-type {
-  font-style: italic;
-  color: darkslategrey;
-}
-.documentation dl dt {
-  display: inline;
-  color: #c7cac6;
-}
-.documentation dl dd {
-  display: inline;
-  margin: 0;
-}
-
 ul.modes {
   color: #c7cac6;
 }
@@ -333,11 +297,11 @@ ul.slides li {
 .small-doc li {
   list-style: none;
   color: #7f7f7f;
-  margin: 0 0 30px 0;
+  margin: 20px 0;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .small-doc li .key {
@@ -347,8 +311,11 @@ ul.slides li {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .key {
-    font-size: 32px;
+    font-size: 30px;
   }
+}
+.small-doc li .val {
+  color: #2c2c2c;
 }
 .small-doc li .description {
   font-weight: normal;
@@ -356,43 +323,47 @@ ul.slides li {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .description {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 .small-doc li .default-value, .small-doc li .type {
-  color: #2c2c2c;
+  font-weight: bold;
+  color: #ff413c;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .default-value, .small-doc li .type {
-    font-size: 31px;
+    font-size: 30px;
   }
 }
 
 
 /* 'use strict' */
 
-.owl-slide-container {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.owl-slide-container li {
-  list-style: none;
-}
-.owl-slide-container .owl-list-item {
-  display: inline-block;
-  position: absolute;
-  vertical-align: top;
+.swipe-area {
+  background-color: #ff413c;
   width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 400px;
 }
-.owl-slide-container .owl-list-item img {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  max-width: 100%;
-  max-height: 100%;
+.swipe-area p {
+  font-size: 36px;
+  color: white;
+  height: 400px;
+  line-height: 400px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.output-container {
+  background-color: #c0c0c0;
+  font-size: 16px;
+  padding: 5px;
+  font-weight: bold;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .output-container {
+    font-size: 32px;
+  }
+}
+.output-container .output {
+  font-weight: normal;
 }

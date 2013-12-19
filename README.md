@@ -1,5 +1,5 @@
 OwlSwipe
 ========
-v0.1
+v0.2
 
-JQuery Plugin - touch event detection
+JQuery Plugin - touch event detection. Listens for swipes and touch movements.

@@ -1,7 +1,7 @@
 @import "variables";
 
 html {
-  font-family: 'Open Sans', 'Roboto', Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 12px;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
@@ -66,34 +66,25 @@ p, a {
 }
 
 pre {
+  font-family: Consolas, monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
   color: #515450;
   padding: 10px;
   margin: 0 0 20px 0;
   @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 2};
-  }
-}
-
-code {
-  margin: 0;
-  padding: 0;
-  white-space: pre-wrap;
-  padding: 10px;
-  @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 2};
+    font-size: #{$retinaFontSize - 4};
   }
 }
 
 var {
-  font-family: monospace;
+  font-family: Consolas, monospace;
   font-style: normal;
   font-weight: normal;
   color: #515450;
   padding: 0;
   @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 2};
+    font-size: #{$retinaFontSize - 4};
   }
 }
 

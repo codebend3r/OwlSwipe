@@ -91,7 +91,6 @@ module.exports = function(grunt) {
 				    'js/vendor/knockout-2.2.1.js',
 				    'js/vendor/TweenMax.min.js',
 				    'js/internal/Crivas.Main.js',
-				    'js/internal/Crivas.Gallery.js',
 				    'js/internal/Crivas.Documentation.js',
 				    'js/internal/Crivas.ImageData.js',
 				    'js/internal/Crivas.ViewModel.js',
@@ -214,7 +213,7 @@ module.exports = function(grunt) {
                     port: 21,
                     authKey: 'key1'
                 },
-                src: 'www',
+                src: '<%= pkg.outputFolder %>',
                 dest: '/domains/crivas.net/html/git/owlswipe'
             }
         }
