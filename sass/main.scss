@@ -62,11 +62,14 @@ p, a {
     font-size: 10px;
     margin: 50px 0;
     text-align: center;
+    @media #{$retinaBreakpoint} {
+      font-size: {$retinaFontSize - 6};
+    }
   }
 }
 
 pre {
-  font-family: Consolas, monospace;
+  font-family: Consolas, 'monaco', monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
   color: #515450;
@@ -78,7 +81,7 @@ pre {
 }
 
 var {
-  font-family: Consolas, monospace;
+  font-family: Consolas, 'monaco', monospace;
   font-style: normal;
   font-weight: normal;
   color: #515450;
