@@ -76,7 +76,7 @@ pre {
   padding: 10px;
   margin: 0 0 20px 0;
   @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 4};
+    font-size: #{$retinaFontSize - 6};
   }
 }
 
@@ -87,7 +87,7 @@ var {
   color: #515450;
   padding: 0;
   @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 4};
+    font-size: #{$retinaFontSize - 6};
   }
 }
 
@@ -219,9 +219,16 @@ ul.slides {
     .val {
       color: #2c2c2c;
     }
-    .description {
+    .paramdescription {
       font-weight: normal;
       font-size: 12px;
+      @media #{$retinaBreakpoint} {
+        font-size: #{$retinaFontSize - 2};
+      }
+    }
+    .description {
+      font-weight: normal;
+      font-size: 13px;
       @media #{$retinaBreakpoint} {
         font-size: #{$retinaFontSize - 2};
       }

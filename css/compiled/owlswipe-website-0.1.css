@@ -172,7 +172,7 @@ pre {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   pre {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
@@ -185,7 +185,7 @@ var {
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   var {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
@@ -322,9 +322,18 @@ ul.slides li {
 .small-doc li .val {
   color: #2c2c2c;
 }
-.small-doc li .description {
+.small-doc li .paramdescription {
   font-weight: normal;
   font-size: 12px;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .small-doc li .paramdescription {
+    font-size: 30px;
+  }
+}
+.small-doc li .description {
+  font-weight: normal;
+  font-size: 13px;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .small-doc li .description {

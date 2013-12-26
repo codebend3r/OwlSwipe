@@ -65,9 +65,9 @@
 	    <h4>JS</h4>
 	    <pre>
 $('.swipe-area').owlmobileswipe({
-	swipeLeft: function(distance) {
-		console.log('SWIPED LEFT', distance);
-	}
+&nbsp;&nbsp;swipe: function(distance) {
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('SWIPED', distance);
+&nbsp;&nbsp;}
 });
 	    </pre>
 
@@ -81,17 +81,20 @@ $('.swipe-area').owlmobileswipe({
 
         <ul class='small-doc' data-bind='foreach: optionsList'>
             <li>
-                <p><span class='key' data-bind='html: key'></span></p>
+                <p><span class='key' data-bind='html: key'></span> - <span class='description' data-bind='html: description'></span></p>
                 <p><span class='val'>default value: </span><span class='default-value' data-bind='html: defaultValue'></span></p>
                 <p><span class='val'>type: </span><span class='type' data-bind='html: type'></span></p>
-                <p class='description' data-bind='html: description'></p>
+                <p><u>function params</u></p>
+                <div data-bind='foreach: params'>
+                    <p><span class='type' data-bind='html: name'></span> - <span class='paramdescription' data-bind='html: description'></span></p>
+                </div>
             </li>
             <hr>
         </ul>
 
-        <h3>Events</h3>
+        <h3 data-bind='visible: eventsList().length > 0'>Events</h3>
 
-        <ul class='small-doc' data-bind='foreach: eventsList'>
+        <ul class='small-doc' data-bind='foreach: eventsList, visible: eventsList().length > 0'>
             <li>
                 <p><span class='key' data-bind='html: eventName'></span></p>
                 <p><span class='val'>event params: </span><span class='type' data-bind='html: target'></span></p>
@@ -113,7 +116,6 @@ $('.swipe-area').owlmobileswipe({
 <script src="js/vendor/TweenMax.min.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Main.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Documentation.js" type="text/javascript"></script>
-<script src="js/internal/Crivas.ImageData.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.ViewModel.js" type="text/javascript"></script>
 <script src="js/internal/Crivas.Init.js" type="text/javascript"></script>
 <!-- @endif -->

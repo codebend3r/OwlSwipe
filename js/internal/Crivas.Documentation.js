@@ -1,20 +1,3 @@
-/*
- swipeLeft: function(){},
- swipeRight: function(){},
- swipeUp: function(){},
- swipeDown: function(){},
- touchMove: function(){},
- touchMoveLeft: function(){},
- touchMoveRight: function(){},
- touchMoveUp: function(){},
- touchMoveDown: function(){},
- noSwipe: function(){},
- bufferX: 50,
- bufferY: 50,
- minMovementX: 75,
- minMovementY: 75,
- swipeTimeout: 3000
- */
 
 CS.documentation = {
 
@@ -22,113 +5,160 @@ CS.documentation = {
 		{
 			key: 'swipe',
 			defaultValue: 'null',
+			params: [
+				{
+					name: 'distance',
+					description: 'An object containing x and y properties representing the distance traveled in both directions.'
+				}
+			],
 			type: 'Function',
-			description: 'N/A',
+			description: 'A callback function that\'s triggered when a swiping motion is detected in any direction.',
 			required: false
 		},
         {
             key: 'swipeLeft',
             defaultValue: 'null',
+            params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
             type: 'Function',
-            description: 'N/A',
+            description: 'A callback function that\'s triggered when a swiping left motion is detected.',
             required: false
         },
 	    {
 		    key: 'swipeRight',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when a swiping left motion is detected.',
 		    required: false
 	    },
 	    {
 		    key: 'swipeUp',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when a swiping up motion is detected.',
 		    required: false
 	    },
 	    {
 		    key: 'swipeDown',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when a swiping down motion is detected.',
 		    required: false
 	    },
 	    {
 		    key: 'touchMove',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when finger is currently moving on touch devices in any direction.',
 		    required: false
 	    },
 	    {
 		    key: 'touchMoveLeft',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when finger is currently moving left.',
 		    required: false
 	    },
 	    {
 		    key: 'touchMoveRight',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when finger is currently moving right.',
 		    required: false
 	    },
 	    {
 		    key: 'touchMoveUp',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when finger is currently moving up.',
 		    required: false
 	    },
 	    {
 		    key: 'touchMoveDown',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when finger is currently moving down.',
 		    required: false
 	    },
 	    {
 		    key: 'noSwipe',
 		    defaultValue: 'null',
+		    params: [{
+				name: 'distance',
+				description: 'An object containing x and y properties representing the distance traveled in both directions.'
+			}],
 		    type: 'Function',
-		    description: 'N/A',
+		    description: 'A callback function that\'s triggered when a swipe is started and not completed. Either because of an error or not enough pixels were swiped vertically or hozintally.<br><br>' + 
+		    'Based on <var>minMovementX</var> and <var>minMovementY</var>.',
 		    required: false
 	    },
 	    {
 		    key: 'bufferX',
-		    defaultValue: 'null',
+		    defaultValue: '50',
 		    type: 'Number',
-		    description: '50',
+		    description: 'The distance in pixels your finger can deviate while swiping vertically.',
 		    required: false
 	    },
 	    {
 		    key: 'bufferY',
-		    defaultValue: 'null',
+		    defaultValue: '50',
 		    type: 'Number',
-		    description: '50',
+		    description: 'The distance in pixels your finger can deviate while swiping horizontally.',
 		    required: false
 	    },
 	    {
 		    key: 'minMovementX',
-		    defaultValue: 'null',
+		    defaultValue: '75',
 		    type: 'Number',
-		    description: '75',
+		    description: 'The minimum amount of pixels along the x axis in order to trigger a swipe movement.',
 		    required: false
 	    },
 	    {
 		    key: 'minMovementY',
 		    defaultValue: '75',
 		    type: 'Number',
-		    description: 'N/A',
+		    description: 'The minimum amount of pixels along the y axis in order to trigger a swipe movement.',
 		    required: false
 	    },
 	    {
 		    key: 'swipeTimeout',
 		    defaultValue: '3000',
 		    type: 'Number',
-		    description: 'N/A',
+		    description: 'The amount of time in milliseconds to timeout/cancel the swipe if your finger is moving to slow.',
 		    required: false
 	    }
 
@@ -136,11 +166,6 @@ CS.documentation = {
     ],
 	
 	events: [
-		{
-			eventName: 'N/A',
-			description: 'N/A',
-			target: 'N/A'
-		}
 	]
 
 };

@@ -12,24 +12,9 @@ CS.init = function () {
 CS.initSwipe = function() {
 
     $('.swipe-area').owlmobileswipe({
-        swipeLeft: function(distance) {
-	        CS.output('SWIPED LEFT', distance);
-        },
-        swipeRight: function(distance) {
-	        CS.output('SWIPED RIGHT', distance);
-        },
-	    swipeUp: function(distance) {
-		    CS.output('SWIPED UP', distance);
-	    },
-	    swipeDown: function(distance) {
-		    CS.output('SWIPED DOWN', distance);
-	    },
-	    noSwipe: function(distance) {
-		    //CS.output('NO SWIPE', distance);
-	    },
-	    touchMove: function(distance) {
-		    //CS.output('TOUCH MOVING', distance);
-	    }
+        swipe: function(distance) {
+	        CS.output('SWIPED', distance);
+        }
     });
 
 };
