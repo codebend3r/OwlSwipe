@@ -156,9 +156,14 @@ p.legal, a.legal {
   margin: 50px 0;
   text-align: center;
 }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  p.legal, a.legal {
+    font-size: 26px;
+  }
+}
 
 pre {
-  font-family: Consolas, monospace;
+  font-family: Consolas, 'monaco', monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
   color: #515450;
@@ -172,7 +177,7 @@ pre {
 }
 
 var {
-  font-family: Consolas, monospace;
+  font-family: Consolas, 'monaco', monospace;
   font-style: normal;
   font-weight: normal;
   color: #515450;

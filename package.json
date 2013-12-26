@@ -1,10 +1,12 @@
 {
-  "name": "OwlSwipe",
+  "title": "Owl Swipe",
+  "name": "owlswipe",
   "version": "0.1",
   "outputFolder": "www",
   "outputName": "owlswipe-website",
   "pluginName": "jquery.owlswipe",
   "pluginVersion": "0.2",
+  "port": "8000",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.6.3",

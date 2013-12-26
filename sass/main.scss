@@ -63,7 +63,7 @@ p, a {
     margin: 50px 0;
     text-align: center;
     @media #{$retinaBreakpoint} {
-      font-size: {$retinaFontSize - 6};
+      font-size: #{$retinaFontSize - 6};
     }
   }
 }

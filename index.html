@@ -9,13 +9,13 @@
 	<!-- @if NODE_ENV == 'DEV' -->
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owlswipe.css"/>
+	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->.css"/>
 	<!-- @endif -->
 	<!-- @if NODE_ENV == 'PROD' -->
-	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.css"/>
+	<link rel="stylesheet" type="text/css" href="css/<!-- @echo outputName -->-<!-- @echo version -->.css"/>
 	<!-- @endif -->
 	<!-- @if NODE_ENV == 'RELEASE' -->
-	<link rel="stylesheet" type="text/css" href="css/<!-- @echo name -->-<!-- @echo version -->.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/<!-- @echo outputName -->-<!-- @echo version -->.min.css"/>
 	<!-- @endif -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' >
 
@@ -38,11 +38,11 @@
 <div class='main-container'>
 
     <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed) 6KB</a>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed)</a>
     </div>
 
     <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified) 4KB</a>
+        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified)</a>
     </div>
 
     <div class='container'>
@@ -70,6 +70,8 @@ $('.swipe-area').owlmobileswipe({
 	}
 });
 	    </pre>
+
+    </div>
 
     <hr>
 
@@ -116,10 +118,13 @@ $('.swipe-area').owlmobileswipe({
 <script src="js/internal/Crivas.Init.js" type="text/javascript"></script>
 <!-- @endif -->
 <!-- @if NODE_ENV == 'PROD' -->
-<script src="js/<!-- @echo name -->-<!-- @echo version -->.js" type="text/javascript"></script>
+<script src="js/<!-- @echo outputName -->-<!-- @echo version -->.js" type="text/javascript"></script>
 <!-- @endif -->
 <!-- @if NODE_ENV == 'RELEASE' -->
-<script src="js/<!-- @echo name -->-<!-- @echo version -->.min.js" type="text/javascript"></script>
+<script src="js/<!-- @echo outputName -->-<!-- @echo version -->.min.js" type="text/javascript"></script>
+<!-- @endif -->
+<!-- @if LIVE_RELOAD == true -->
+<script src="http://localhost:<!-- @echo port -->/livereload.js"></script>
 <!-- @endif -->
 
 
