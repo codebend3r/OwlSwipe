@@ -3,23 +3,23 @@
  * crivas.net
  *
  * Author: Chester Rivas
- * Version: 0.2
+ * Version: 0.2.1
  */
 
 var Owl = Owl || {};
 
-Owl.swipeEvents = {};
-Owl.swipeEvents.SWIPE = 'swipe';
-Owl.swipeEvents.SWIPE_LEFT = 'swipe_left';
-Owl.swipeEvents.SWIPE_RIGHT = 'swipe_right';
-Owl.swipeEvents.SWIPE_UP = 'swipe_up';
-Owl.swipeEvents.SWIPE_DOWN = 'swipe_down';
-Owl.swipeEvents.TOUCH_MOVE = 'touch_move';
-Owl.swipeEvents.TOUCH_MOVE_LEFT = 'touch_move_left';
-Owl.swipeEvents.TOUCH_MOVE_RIGHT = 'touch_move_right';
-Owl.swipeEvents.TOUCH_MOVE_UP = 'touch_move_up';
-Owl.swipeEvents.TOUCH_MOVE_DOWN = 'touch_move_down';
-Owl.swipeEvents.NO_SWIPE = 'no_swipe';
+Owl.events = Owl.events || {};
+Owl.events.SWIPE = 'swipe';
+Owl.events.SWIPE_LEFT = 'swipe_left';
+Owl.events.SWIPE_RIGHT = 'swipe_right';
+Owl.events.SWIPE_UP = 'swipe_up';
+Owl.events.SWIPE_DOWN = 'swipe_down';
+Owl.events.TOUCH_MOVE = 'touch_move';
+Owl.events.TOUCH_MOVE_LEFT = 'touch_move_left';
+Owl.events.TOUCH_MOVE_RIGHT = 'touch_move_right';
+Owl.events.TOUCH_MOVE_UP = 'touch_move_up';
+Owl.events.TOUCH_MOVE_DOWN = 'touch_move_down';
+Owl.events.NO_SWIPE = 'no_swipe';
 
 $.fn.owlmobileswipe = function (options) {
 
@@ -57,47 +57,47 @@ $.fn.owlmobileswipe = function (options) {
 
 	self.initDetection = function () {
 
-		$this.on(Owl.swipeEvents.SWIPE, function(e, d){
+		$this.on(Owl.events.SWIPE, function(e, d){
 			settings.swipe.call(settings, d);
 		});
 
-        $this.on(Owl.swipeEvents.SWIPE_LEFT, function(e, d){
+        $this.on(Owl.events.SWIPE_LEFT, function(e, d){
 	        settings.swipeLeft.call(settings, d);
         });
 
-		$this.on(Owl.swipeEvents.SWIPE_RIGHT, function(e, d){
+		$this.on(Owl.events.SWIPE_RIGHT, function(e, d){
 			settings.swipeRight.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.SWIPE_UP, function(e, d){
+		$this.on(Owl.events.SWIPE_UP, function(e, d){
 			settings.swipeUp.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.SWIPE_DOWN, function(e, d){
+		$this.on(Owl.events.SWIPE_DOWN, function(e, d){
 			settings.swipeDown.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.TOUCH_MOVE, function(e, d){
+		$this.on(Owl.events.TOUCH_MOVE, function(e, d){
 			settings.touchMove.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.TOUCH_MOVE_LEFT, function(e, d){
+		$this.on(Owl.events.TOUCH_MOVE_LEFT, function(e, d){
 			settings.touchMoveLeft.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.TOUCH_MOVE_RIGHT, function(e, d){
+		$this.on(Owl.events.TOUCH_MOVE_RIGHT, function(e, d){
 			settings.touchMoveRight.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.TOUCH_MOVE_UP, function(e, d){
+		$this.on(Owl.events.TOUCH_MOVE_UP, function(e, d){
 			settings.touchMoveUp.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.TOUCH_MOVE_DOWN, function(e, d){
+		$this.on(Owl.events.TOUCH_MOVE_DOWN, function(e, d){
 			settings.touchMoveDown.call(settings, d);
 		});
 
-		$this.on(Owl.swipeEvents.NO_SWIPE, function(e, d){
+		$this.on(Owl.events.NO_SWIPE, function(e, d){
 			settings.noSwipe.call(settings, d);
 		});
 
@@ -131,27 +131,27 @@ $.fn.owlmobileswipe = function (options) {
         distanceAbs.y = Math.abs(touchEnd.y - touchStart.y);
 
 	    if (distanceAbs.y > settings.bufferY || distanceAbs.x > settings.bufferY) {
-		    $this.trigger(Owl.swipeEvents.TOUCH_MOVE, [distance]);
+		    $this.trigger(Owl.events.TOUCH_MOVE, [distance]);
 		    e.preventDefault();
 	    }
 
         if (distanceAbs.y < settings.bufferY && distanceAbs.x > settings.minMovementX) {
 
             if (distance.x < 0) {
-	            $this.trigger(Owl.swipeEvents.TOUCH_MOVE_LEFT, [distance]);
+	            $this.trigger(Owl.events.TOUCH_MOVE_LEFT, [distance]);
                 e.preventDefault();
             } else if (distance.x > 0) {
-	            $this.trigger(Owl.swipeEvents.TOUCH_MOVE_RIGHT, [distance]);
+	            $this.trigger(Owl.events.TOUCH_MOVE_RIGHT, [distance]);
                 e.preventDefault();
             }
 
         } else if (distanceAbs.x < settings.bufferX && distanceAbs.y > settings.minMovementY) {
 
 	        if (distance.y < 0) {
-		        $this.trigger(Owl.swipeEvents.TOUCH_MOVE_UP, [distance]);
+		        $this.trigger(Owl.events.TOUCH_MOVE_UP, [distance]);
 		        e.preventDefault();
 	        } else if (distance.y > 0) {
-		        $this.trigger(Owl.swipeEvents.TOUCH_MOVE_DOWN, [distance]);
+		        $this.trigger(Owl.events.TOUCH_MOVE_DOWN, [distance]);
 		        e.preventDefault();
 	        }
 
@@ -163,31 +163,31 @@ $.fn.owlmobileswipe = function (options) {
 		$this.off('touchmove touchend');
 		if (dispatchSwipeEvent) {
 
-			$this.trigger(Owl.swipeEvents.SWIPE, [distance]);
+			$this.trigger(Owl.events.SWIPE, [distance]);
 
 			if (distanceAbs.y < settings.bufferY && distanceAbs.x > settings.minMovementX) {
 
 				if (distance.x < 0) {
-					$this.trigger(Owl.swipeEvents.SWIPE_LEFT, [distance]);
+					$this.trigger(Owl.events.SWIPE_LEFT, [distance]);
 					e.preventDefault();
 				} else if (distance.x > 0) {
-					$this.trigger(Owl.swipeEvents.SWIPE_RIGHT, [distance]);
+					$this.trigger(Owl.events.SWIPE_RIGHT, [distance]);
 					e.preventDefault();
 				}
 
 			} else if (distanceAbs.x < settings.bufferX && distanceAbs.y > settings.minMovementY) {
 
 				if (distance.y < 0) {
-					$this.trigger(Owl.swipeEvents.SWIPE_UP, [distance]);
+					$this.trigger(Owl.events.SWIPE_UP, [distance]);
 					e.preventDefault();
 				} else if (distance.y > 0) {
-					$this.trigger(Owl.swipeEvents.SWIPE_DOWN, [distance]);
+					$this.trigger(Owl.events.SWIPE_DOWN, [distance]);
 					e.preventDefault();
 				}
 
 			} else {
 
-				$this.trigger(Owl.swipeEvents.NO_SWIPE, [distance]);
+				$this.trigger(Owl.events.NO_SWIPE, [distance]);
 
 			}
 
