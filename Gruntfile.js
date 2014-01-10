@@ -176,7 +176,7 @@ module.exports = function(grunt) {
 		    	LIVE_RELOAD: false
 		    },
 		    dev: {
-			    NODE_ENV: 'DEV',
+			    NODE_ENV: 'DEV'
 		    },
 		    prod: {
 			    NODE_ENV: 'PROD'
@@ -226,6 +226,25 @@ module.exports = function(grunt) {
                 dest: '/domains/crivas.net/html/git/<%= pkg.name %>'
             }
         }
+	    /*
+	    compress: {
+		    main: {
+			    options: {
+				    mode: 'gzip'
+			    },
+			    files: [
+				    // Each of the files in the src/ folder will be output to
+				    // the dist/ folder each with the extension .gz.js
+				    {
+					    expand: true,
+					    src: ['js/plugins/jquery.owlswipe.js'],
+					    dest: 'package/',
+					    ext: '.gz.js'
+				    }
+			    ]
+		    }
+	    }
+	    */
     });
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -236,6 +255,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-env');
     grunt.loadNpmTasks('grunt-ftp-deploy');
