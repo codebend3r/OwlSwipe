@@ -11,7 +11,7 @@ CS.init = function () {
 
 CS.initSwipe = function() {
 
-    $('.swipe-area').owlmobileswipe({
+    $('.swipe-area').owlswipe({
         swipe: function(distance) {
 	        CS.output('SWIPED', distance);
         }

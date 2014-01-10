@@ -1,7 +1,7 @@
 {
   "title": "OwlSwipe",
   "name": "owlswipe",
-  "version": "0.1",
+  "version": "1.1",
   "outputFolder": "www",
   "outputName": "owlswipe-website",
   "pluginName": "jquery.owlswipe",
@@ -13,6 +13,7 @@
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compress": "~0.5.3",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-cssmin": "~0.7.0",
