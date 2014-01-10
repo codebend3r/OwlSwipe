@@ -1,9 +1,10 @@
-/*
- * OwlSwipe
- * crivas.net
- *
- * Author: Chester Rivas
- * Version: 0.2.3
+/*!
+ * pluginName: OwlSwipe
+ * author: Chester Rivas
+ * website: crivas.net
+ * description: jquery plugin for touch event support, includes touch moving and swiping in any direction
+ * version: 0.2.3
+ * Copyright (c) 2014 Crivas Inc.
  */
 
 var Owl = Owl || {};
