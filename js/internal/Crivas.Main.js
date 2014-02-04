@@ -12,16 +12,23 @@ CS.init = function () {
 CS.initSwipe = function() {
 
     $('.swipe-area').owlswipe({
-        swipe: function(distance) {
-	        CS.output('SWIPED', distance);
+        swipeUp: function(distance) {
+	        CS.output('SWIPED UP');
+        },
+        swipeDown: function(distance) {
+	        CS.output('SWIPED DOWN');
+        },
+        swipeLeft: function(distance) {
+	        CS.output('SWIPED LEFT');
+        },
+        swipeRight: function(distance) {
+	        CS.output('SWIPED RIGHT');
         }
     });
 
 };
 
-CS.output = function(eventName, dis) {
-	var outputString = eventName + ' --> x:' + dis.x + ', y: ' + dis.y;
-	console.log(outputString);
-	$('.output-container .output').text(outputString);
-	//$('.swipe-area p').text(outputString);
+CS.output = function(output) {
+	$('.output-container .output').text(output);
+	$('.swipe-area p').text(output);
 };

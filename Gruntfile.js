@@ -150,24 +150,21 @@ module.exports = function(grunt) {
                 options: {
                     port: '<%= pkg.port %>',
                     base: '<%= pkg.outputFolder %>',
-                    keepalive: false,
-                    livereload: true
+                    livereload: '<%= pkg.port %>'
                 }
             },
 	        prod: {
 		        options: {
 			        port: '<%= pkg.port %>',
                     base: '<%= pkg.outputFolder %>',
-			        keepalive: false,
-			        livereload: false
+			        livereload: '<%= pkg.port %>'
 		        }
 	        },
 	        release: {
 		        options: {
 			        port: '<%= pkg.port %>',
                     base: '<%= pkg.outputFolder %>',
-			        keepalive: false,
-			        livereload: false
+			        livereload: '<%= pkg.port %>'
 		        }
 	        }
         },
@@ -262,9 +259,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('watchdev', [ 'connect:dev', 'env:watching', 'watch:dev' ]);
 	grunt.registerTask('watchprod', [ 'connect:prod', 'env:watching', 'watch:prod' ]);
 	grunt.registerTask('watchrelease', [ 'connect:release', 'env:watching', 'watch:release' ]);
-	grunt.registerTask('dev', [ 'env:dev', 'clean', 'sass', 'concat:pluginconcat', 'copy:dev', 'preprocess:dev' ]);
-	grunt.registerTask('prod', [ 'env:prod', 'clean', 'sass', 'concat', 'copy:prod', 'preprocess:prod' ]);
-    grunt.registerTask('release', [ 'env:release', 'clean', 'sass', 'concat', 'uglify', 'cssmin', 'copy:release', 'preprocess:release' ]);
+	grunt.registerTask('dev', [ 'env:dev', 'sass', 'clean', 'concat:pluginconcat', 'copy:dev', 'preprocess:dev' ]);
+	grunt.registerTask('prod', [ 'env:prod', 'sass', 'clean', 'concat', 'copy:prod', 'preprocess:prod' ]);
+    grunt.registerTask('release', [ 'env:release', 'sass', 'clean', 'concat', 'uglify', 'cssmin', 'copy:release', 'preprocess:release' ]);
     grunt.registerTask('deploy', [ 'ftp-deploy' ]);
     grunt.registerTask('launch', [ 'release', 'deploy' ]);
     grunt.registerTask('default', ['dev']);
