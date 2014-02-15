@@ -96,9 +96,15 @@ $('.swipe-area').owlmobileswipe({
 
         <ul class='small-doc' data-bind='foreach: eventsList, visible: eventsList().length > 0'>
             <li>
-                <p><span class='key' data-bind='html: eventName'></span></p>
-                <p><span class='val'>event params: </span><span class='type' data-bind='html: target'></span></p>
+                <p><span class='key' data-bind='html: eventName'></span> = <span class='key' data-bind='html: constant'></span></p>
                 <p class='description' data-bind='html: description'></p>
+                <p data-bind='visible: eventParams.length > 0'>
+                    <span class='val'>event params: [</span>
+		                <span data-bind='foreach: eventParams'>
+			                <span class='type' data-bind='text: $data'></span>
+						</span>
+                    <span class='val'>]</span>
+                </p>
             </li>
             <hr>
         </ul>
