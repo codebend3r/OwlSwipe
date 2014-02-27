@@ -5,7 +5,7 @@
   "outputFolder": "www",
   "outputName": "owlswipe-website",
   "pluginName": "jquery.owlswipe",
-  "pluginVersion": "0.2.3",
+  "pluginVersion": "1.0",
   "port": "8000",
   "devDependencies": {
     "grunt": "~0.4.2",

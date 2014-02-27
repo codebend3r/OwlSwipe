@@ -38,11 +38,7 @@
 <div class='main-container'>
 
     <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.js'>Download (Uncompressed)</a>
-    </div>
-
-    <div class='download'>
-        <a href='js/<!-- @echo pluginName -->-<!-- @echo pluginVersion -->.min.js'>Download (Minified)</a>
+        <a href='<!-- @echo packageFileName -->'>Download Package</a>
     </div>
 
     <div class='container'>
@@ -84,8 +80,9 @@ $('.swipe-area').owlmobileswipe({
                 <p><span class='key' data-bind='html: key'></span> - <span class='description' data-bind='html: description'></span></p>
                 <p><span class='val'>default value: </span><span class='default-value' data-bind='html: defaultValue'></span></p>
                 <p><span class='val'>type: </span><span class='type' data-bind='html: type'></span></p>
-                <p><u>function params</u></p>
-                <div data-bind='foreach: params'>
+                <!-- <p data-bind='visible: params.length > 0'><u>Params</u></p> -->
+                <div data-bind='foreach: params, visible: params.length > 0'>
+                    <p><span class='code' data-bind='html: functionExample'></span></p>
                     <p><span class='type' data-bind='html: name'></span> - <span class='paramdescription' data-bind='html: description'></span></p>
                 </div>
             </li>
@@ -98,10 +95,10 @@ $('.swipe-area').owlmobileswipe({
             <li>
                 <p><span class='key' data-bind='html: eventName'></span> = <span class='key' data-bind='html: constant'></span></p>
                 <p class='description' data-bind='html: description'></p>
-                <p data-bind='visible: eventParams.length > 0'>
+                <p data-bind='visible: eventParams().length > 0'>
                     <span class='val'>event params: [</span>
 		                <span data-bind='foreach: eventParams'>
-			                <span class='type' data-bind='text: $data'></span>
+                            <span class='param-name' data-bind='html: name'></span>: <span class='param-description' data-bind='html: value'></span>
 						</span>
                     <span class='val'>]</span>
                 </p>

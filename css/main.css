@@ -78,6 +78,19 @@ p.legal, a.legal {
   }
 }
 
+.code {
+  font-family: Consolas, 'monaco', monospace;
+  background-color: #dbdbdb;
+  border: 1px solid #ddd;
+  color: #515450;
+  margin: 0 0 20px 0;
+}
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .code {
+    font-size: 26px;
+  }
+}
+
 pre {
   font-family: Consolas, 'monaco', monospace;
   background-color: #dbdbdb;
@@ -183,14 +196,17 @@ ul.slides li {
 
 .download {
   font-weight: bold;
-  padding: 10px 0;
+  padding: 30px 0;
 }
 .download a {
-  font-size: 14px;
+  font-size: 18px;
   color: #3e74ff;
+  background-color: lightcyan;
+  padding: 10px;
 }
 .download a:hover, .download a:selected {
   color: #ff413c;
+  background-color: #bcffa1;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .download a {
