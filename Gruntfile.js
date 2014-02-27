@@ -204,7 +204,7 @@ module.exports = function(grunt) {
                     version: '<%= pkg.version %>',
                     pluginName: '<%= pkg.pluginName %>',
                     pluginVersion: '<%= pkg.pluginVersion %>',
-                    packageFileName: '/download/<%= pkg.pluginName %>-<%= pkg.pluginVersion %>.zip',
+                    packageFileName: 'download/<%= pkg.pluginName %>-<%= pkg.pluginVersion %>.zip',
                     port: '<%= pkg.port %>'
                 }
             },
