@@ -21,7 +21,7 @@ Owl.event.TOUCH_MOVE_RIGHT = 'touch_move_right';
 Owl.event.TOUCH_MOVE_UP = 'touch_move_up';
 Owl.event.TOUCH_MOVE_DOWN = 'touch_move_down';
 Owl.event.TOUCH_STOP = 'touch_stop';
-Owl.event.NO_MOVEMENT = 'no_swipe';
+Owl.event.LONG_PRESS = 'long_press';
 Owl.event.NO_SWIPE = 'no_swipe';
 
 $.fn.owlswipe = function (options) {
@@ -40,13 +40,13 @@ $.fn.owlswipe = function (options) {
 		touchMoveDown: function(){},
 		touchStop: function(){},
 		noSwipe: function(){},
-		noMovement: function(){},
+		longPress: function(){},
 		bufferX: 50,
 		bufferY: 50,
 		minMovementX: 75,
 		minMovementY: 75,
 		swipeTimeout: 3000,
-		maxClickDelay: 200,
+		maxClickDelay: 4000,
 		disableHorizontalSwipe: false,
 		disableVerticalSwipe: false
 	}, options);
@@ -115,8 +115,8 @@ $.fn.owlswipe = function (options) {
 			settings.noSwipe.call(settings);
 		});
 
-		$this.on(Owl.event.NO_MOVEMENT, function(e){
-			settings.noMovement.call(settings);
+		$this.on(Owl.event.LONG_PRESS, function(e){
+			settings.longPress.call(settings);
 		});
 
 		$this.on('touchstart', self.onTouchStart);
@@ -187,7 +187,7 @@ $.fn.owlswipe = function (options) {
 		$this.trigger(Owl.event.TOUCH_STOP);
 		clearInterval(clickDelayTimer);
 		if (distanceAbs.y <= 1 && distanceAbs.x <= 1 && clickDelay < settings.maxClickDelay) {
-			$this.trigger(Owl.event.NO_MOVEMENT);
+			$this.trigger(Owl.event.LONG_PRESS);
 			$this.trigger('click');
 		}
 		clickDelay = 0;
