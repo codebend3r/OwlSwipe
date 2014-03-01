@@ -7,22 +7,43 @@ CS.ViewModel = function () {
             key: '<b>' + i.key + '</b>',
             defaultValue: i.defaultValue,
             paramsExist: i.paramsExist,
-            params: ko.utils.arrayMap(i.params, function (j) {
-                if (!j) {
+            params: ko.computed(function(){
+
+                console.log('i.params.length', i.params.length);
+                console.log('i.type', i.type);
+                console.log('===================');
+
+                if (i.params.length == 0 && i.type == 'Function') {
+                    //console.log('Function Without Params');
                     return {
-                        functionExample: ko.computed(function(){
-                            return i.key + ': function(){...}';
+                        name: 'elephant',
+                        description: 'giraffe',
+                        functionExample: ko.computed(function() {
+                            return i.key + ': function( ){...}';
                         })
                     }
+                } else if (i.params.length > 0 && i.type == 'Function') {
+                    //console.log('Function W/ Params');
+                    ko.utils.arrayMap(i.params, function (j) {
+                        return {
+                            name: j.name,
+                            description: j.description,
+                            functionExample: ko.computed(function() {
+                                return i.key + ': function( ' + j.name + ' ){...}';
+                            })
+                        };
+                    })
                 } else {
+                    //console.log('Ignore');
                     return {
-                        name: j.name,
-                        description: j.description,
+                        name: 'dog',
+                        description: 'cat',
                         functionExample: ko.computed(function() {
-                            return i.key + ': function( ' + j.name + ' ){...}';
+                            return i.key + ': boo( ){...}';
                         })
                     };
                 }
+
             }),
             type: i.type,
             description: i.description,

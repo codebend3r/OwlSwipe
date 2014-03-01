@@ -128,7 +128,7 @@ CS.documentation = {
             params: [],
             type: 'Function',
             description: 'A callback function that\'s triggered when a swipe is started and not completed. Either because of an error or not enough pixels were swiped vertically or hozintally.<br><br>' +
-                'Based on <var>minMovementX</var> and <var>minMovementY</var>.',
+                'Based on <code>minMovementX</code> and <code>minMovementY</code>.',
             required: false
         },
         {

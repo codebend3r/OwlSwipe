@@ -68,35 +68,13 @@ p, a {
   }
 }
 
-.code {
+pre, code, .code {
   font-family: Consolas, 'monaco', monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
-  color: #515450;
-  margin: 0 0 20px 0;
-  @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 6};
-  }
-}
-
-pre {
-  font-family: Consolas, 'monaco', monospace;
-  background-color: #dbdbdb;
-  border: 1px solid #ddd;
-  color: #515450;
-  padding: 10px;
-  margin: 0 0 20px 0;
-  @media #{$retinaBreakpoint} {
-    font-size: #{$retinaFontSize - 6};
-  }
-}
-
-var {
-  font-family: Consolas, 'monaco', monospace;
-  font-style: normal;
-  font-weight: normal;
   color: #515450;
   padding: 0;
+  margin: 0;
   @media #{$retinaBreakpoint} {
     font-size: #{$retinaFontSize - 6};
   }

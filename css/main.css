@@ -78,42 +78,16 @@ p.legal, a.legal {
   }
 }
 
-.code {
+pre, code, .code {
   font-family: Consolas, 'monaco', monospace;
   background-color: #dbdbdb;
   border: 1px solid #ddd;
-  color: #515450;
-  margin: 0 0 20px 0;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .code {
-    font-size: 26px;
-  }
-}
-
-pre {
-  font-family: Consolas, 'monaco', monospace;
-  background-color: #dbdbdb;
-  border: 1px solid #ddd;
-  color: #515450;
-  padding: 10px;
-  margin: 0 0 20px 0;
-}
-@media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  pre {
-    font-size: 26px;
-  }
-}
-
-var {
-  font-family: Consolas, 'monaco', monospace;
-  font-style: normal;
-  font-weight: normal;
   color: #515450;
   padding: 0;
+  margin: 0;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  var {
+  pre, code, .code {
     font-size: 26px;
   }
 }
